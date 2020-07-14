@@ -2,7 +2,7 @@
 
 A simple example of some BDD-style automated acceptance criteria.
 
-* The project setup was taken from serenity github cook-books and was addapted to the giver requirements.
+* The project setup was taken from serenity github cook-books and was addapted for the given requirements.
 Link:
 https://github.com/serenity-bdd/serenity-demos/tree/master/cucumber-webtests
 
@@ -39,17 +39,17 @@ On the other hand - these tests are made to check the functionality of the produ
 
 
 
-Explication of folders:
-- components -> here you will have common components code - for components that appear in all the pages.
-- pages -> will contain only the code specific to each page. it will not contain any logic, just interact with the UI or grab neede information and pass it further.
-- steps/serenity -> will contain the code specific to each page. it also contains logic for modifying the information to get only needed information.
-- steps - makes the link between the gherkin code and the java code from steps/serenity. It should contain only high level steps no logic, just steps and asserts. - of course here we can add a new layer of folders to separate multiple feature files per bigger features. this can be decided in the team once the features get tested/automated 
+Folders structure and details:
+- components -> here you will have common components code - a component is a part of a webpage that repeates in more than 1 page, this way we don't have to duplicate code.
+- pages -> will contain only the code specific to each page. It will not contain any logic, just interact with the UI or grab neede information and pass it further.
+- steps/serenity -> will contain the code specific to each page. It also contains logic for modifying the information to get only needed information.
+- steps -> makes the link between the gherkin code and the java code from steps/serenity. It should contain only high level steps, no logic, just steps and asserts. - of course here we can add a new layer of folders to separate multiple feature files per bigger features. This can be decided in the team once the features get automated. 
 - resources/features/ - contains a structure of folder/files for all features - the files will contain gherkin code that represents the tests that will run for each feature.
-- there are some other files that will be changed at beggining to configure the project and after that you just touch them when needed like: build.gradle, pom.xml, serenity.properties, grade-wrapper.properties
+- there are some other files that will be changed at the beggining to configure the project and after that you just touch them when needed, like: build.gradle, pom.xml, serenity.properties, grade-wrapper.properties
 
 
 Good practives:
-- I have stated some in the Explication of Folders
+- I have stated some in the Folders Structure
 - Don't write code that you don't use (like adding UI elements that we don't use in the pages definitions)
 - Follow gherkin standard rules when you write the gherkin code.
 - Get the gherkin code validated with PM and devs before coding it - this implies writting the gherkin code first.
